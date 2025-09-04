@@ -2,6 +2,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import Navbar from "./components/navbar";
+import BACKEND_URI from "./util";
 
 type vin = string;
 type details = {
@@ -40,7 +41,7 @@ export default function Home() {
     setData(null);
 
     axios
-      .get("http://localhost:8000/show/" + VIN)
+      .get(BACKEND_URI + "/show/" + VIN)
       .then((res) => setData(res.data))
       .catch((err) => {
         console.log(err);
