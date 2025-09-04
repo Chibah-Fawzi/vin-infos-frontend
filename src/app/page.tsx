@@ -41,7 +41,7 @@ export default function Home() {
     setData(null);
 
     axios
-      .get(BACKEND_URI + "/show/" + VIN)
+      .get(process.env.NEXT_PUBLIC_BACKEND_URI + "/show/" + VIN)
       .then((res) => setData(res.data))
       .catch((err) => {
         console.log(err);
